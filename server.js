@@ -1,5 +1,4 @@
-// https://server-bianlee.vercel.app
-
+// https://hackdavisapi.vercel.app/api/getPost
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");

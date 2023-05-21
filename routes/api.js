@@ -3,11 +3,18 @@
 const express = require("express");
 const router = express.Router();
 const Post = require("../models/post");
+const Contact = require("../models/contact");
 
 // GET http://localhost:5000/api/getMessage
 router.route("/getPost").get((req, res) => {
   Post.find()
     .then((posts) => res.json(posts))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+router.route("/getContact").get((req, res) => {
+  Contact.find()
+    .then((contacts) => res.json(contacts))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
